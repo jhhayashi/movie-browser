@@ -27,11 +27,13 @@ const processSearchResult = result => ({
 
 const processSearchResults = ({Search, totalResults}) => ({
   results: Search.map(processSearchResult),
-  total: totalResults,
+  resultCount: totalResults,
 })
 
 export const search = (query, page = 1, additionalConfig = {}) =>
   sendRequest({...additionalConfig, s: query, page})
     .then(processSearchResults)
+    // also include original query so that we can invalidate requests from old queries
+    .then(results => ({query, ...results}))
 
 export const getMovie = (id, additionalConfig = {}) => sendRequest({...additionalConfig, i: id})
