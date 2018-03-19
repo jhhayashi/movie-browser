@@ -1,5 +1,6 @@
 import React from 'react';
 import { FlatList, StyleSheet, Text, View } from 'react-native';
+import PropTypes from 'prop-types'
 
 import {Input} from '../../components'
 import {search} from '../../api'
@@ -7,10 +8,20 @@ import {RESULTS_PER_PAGE} from '../../constants'
 
 import MovieRow from './MovieRow'
 
-const renderItem = ({item}) => <MovieRow {...item} />
+const renderItem = onSelect => ({item}) => <MovieRow onSelect={onSelect} {...item} />
 const getKey = ({id}) => id
 
 export default class Search extends React.Component {
+  static propTypes = {
+    navigation: PropTypes.shape({
+      navigate: PropTypes.func,
+    }),
+  }
+
+  static navigationOptions = {
+    title: 'Home',
+  }
+
   state = {
     query: '',
     results: null,
@@ -54,6 +65,10 @@ export default class Search extends React.Component {
     this.setState({query, pagesLoaded: 1})
   }
 
+  handleMovieSelect = (id, title) => {
+    this.props.navigation.navigate('Movie', {id, title})
+  }
+
   render() {
     return (
       <View style={styles.container}>
@@ -67,7 +82,7 @@ export default class Search extends React.Component {
           ? (
             <FlatList
               data={this.state.results}
-              renderItem={renderItem}
+              renderItem={renderItem(this.handleMovieSelect)}
               keyExtractor={getKey}
               onEndReached={this.fetchMore}
             />

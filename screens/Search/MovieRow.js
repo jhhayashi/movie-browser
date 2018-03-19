@@ -1,5 +1,5 @@
 import React from 'react';
-import { Image, StyleSheet, Text, View } from 'react-native';
+import { Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import PropTypes from 'prop-types'
 
 const styles = StyleSheet.create({
@@ -22,16 +22,17 @@ const styles = StyleSheet.create({
 })
 
 const Row = props => (
-  <View style={styles.container}>
+  <TouchableOpacity onPress={() => props.onSelect(props.id, props.Title)} style={styles.container}>
     <Image style={styles.image} source={{uri: props.Poster}} />
     <View style={styles.movieMetadata}>
       <Text style={styles.title}>{props.Title}</Text>
       <Text>{props.Year} ({props.Type})</Text>
     </View>
-  </View>
+  </TouchableOpacity>
 )
 
 Row.propTypes = {
+  id: PropTypes.string,
   Title: PropTypes.string,
   Year: PropTypes.string,
   Type: PropTypes.string,
