@@ -1,6 +1,6 @@
 import React from 'react';
 import { FlatList, StyleSheet, Text, View } from 'react-native';
-import {Constants} from 'expo'
+import Constants from 'expo-constants'
 import {createStackNavigator} from 'react-navigation'
 
 import Movie from './screens/Movie'

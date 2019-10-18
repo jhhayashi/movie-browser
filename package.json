@@ -2,16 +2,13 @@
   "name": "jhhayashi-movie-browser",
   "version": "1.0.0",
   "main": "lib/App.js",
-  "scripts": {
-    "prebuild": "rm -rf lib || true",
-    "build": "mkdir lib && babel --copy-files --out-dir lib/ --ignore node_modules,package.json,app.json,package-lock.json .",
-    "prepublish": "npm run build"
-  },
+  "scripts": {},
   "dependencies": {
-    "expo": "^25.0.0",
+    "expo": "^35.0.0",
+    "expo-cli": "^3.4.0",
     "prop-types": "^15.6.1",
-    "react": "16.2.0",
-    "react-native": "https://github.com/expo/react-native/archive/sdk-25.0.0.tar.gz",
+    "react": "16.8.3",
+    "react-native": "https://github.com/expo/react-native/archive/sdk-35.0.0.tar.gz",
     "react-navigation": "^2.0.0-alpha.7"
   },
   "files": [
@@ -19,6 +16,7 @@
   ],
   "devDependencies": {
     "babel": "^6.23.0",
-    "babel-cli": "^6.26.0"
+    "babel-cli": "^6.26.0",
+    "babel-preset-expo": "^5.0.0"
   }
 }
