@@ -2,7 +2,12 @@
   "name": "jhhayashi-movie-browser",
   "version": "2.0.1",
   "main": "App.js",
-  "scripts": {},
+  "homepage": "https://github.com/jhhayashi/movie-browser",
+  "bugs": "https://github.com/jhhayashi/movie-browser/issues",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jhhayashi/movie-browser"
+  },
   "dependencies": {
     "expo": "^35.0.0",
     "prop-types": "^15.6.1",
