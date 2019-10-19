@@ -1,8 +1,9 @@
 {
   "name": "jhhayashi-movie-browser",
-  "version": "1.0.0",
-  "main": "lib/App.js",
-  "scripts": {},
+  "version": "2.0.0",
+  "main": "App.js",
+  "scripts": {
+  },
   "dependencies": {
     "expo": "^35.0.0",
     "expo-cli": "^3.4.0",
@@ -12,7 +13,13 @@
     "react-navigation": "^2.0.0-alpha.7"
   },
   "files": [
-    "lib"
+    "App.js",
+    "api.js",
+    "constants.js",
+    "utils.js",
+    "assets/",
+    "components/",
+    "screens/"
   ],
   "devDependencies": {
     "babel": "^6.23.0",
