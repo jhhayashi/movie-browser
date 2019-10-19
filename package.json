@@ -2,8 +2,7 @@
   "name": "jhhayashi-movie-browser",
   "version": "2.0.0",
   "main": "App.js",
-  "scripts": {
-  },
+  "scripts": {},
   "dependencies": {
     "expo": "^35.0.0",
     "expo-cli": "^3.4.0",
