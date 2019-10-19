@@ -1,4 +1,4 @@
-const BASE_URL = 'http://www.omdbapi.com/?apikey=d0afcd37'
+const BASE_URL = 'https://www.omdbapi.com/?apikey=d0afcd37'
 
 const getQueryString = obj => {
   const keys = Object.keys(obj)
